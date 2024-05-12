@@ -1,0 +1,122 @@
+aside#AsideBar {
+  background: var(--main-background-color);
+  color: var(--main-text-color);
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  z-index: 10;
+  flex: 0 0 200px;
+  max-width: 200px;
+  min-width: 200px;
+  width: 200px;
+  .aside_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .aside_list_item {
+      padding-left: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 15px;
+      flex-grow: 1;
+      .dropdown_list {
+        display: none;
+      }
+      i {
+        transition: 0.3s;
+        &.active_icon {
+          transform: scaleY(-1);
+        }
+      }
+      &:active {
+        background: #fff0f3;
+      }
+      .aside_list_action {
+        transition: all 0s linear;
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 0px;
+        text-decoration: none;
+        color: var(--text-color);
+        opacity: 1;
+        transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+          margin 0.3s, color 0.3s;
+        transition-property: opacity, margin, color;
+        transition-duration: 0.3s, 0.3s, 0.3s;
+        transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1), ease,
+          ease;
+        transition-delay: 0s, 0s, 0s;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        font-size: 16px;
+        img,
+        svg {
+          margin-right: 10px;
+        }
+      }
+      &:hover {
+        .aside_list_action {
+          color: #f95192;
+        }
+      }
+    }
+  }
+  .aside_control {
+    height: 80px;
+    width: 100%;
+    // border: solid;
+    bottom: 70px;
+    left: 0px;
+    position: absolute;
+    padding: 16px 16px 8px;
+    background: var(--main-background-color);
+    z-index: 2;
+    .flex_box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        color: #f95192;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 13px;
+        display: inline-flex;
+        align-items: center;
+        img {
+          margin-right: 5px;
+        }
+        &:hover {
+          color: #363636;
+        }
+      }
+      strong {
+        color: var(---main-text-color);
+        font-size: 13px;
+        font-weight: 700;
+      }
+    }
+    .flex_box_theme_control {
+      display: flex;
+      justify-content: flex-end;
+      button {
+        cursor: pointer;
+      }
+      .light_theme {
+        color: #f95192;
+      }
+      &.dark_theme_enable {
+        .light_theme {
+          color: var(---main-text-color);
+        }
+        .dark_theme {
+          color: #f95192;
+        }
+      }
+    }
+  }
+}
